@@ -102,7 +102,7 @@ return (
     <div id="tasks" className="flex flex-col mt-20">
       {array.map((item, ind) => {
         return (
-          <div className=" bg-[#5CDb95] px-10 pt-8 mx-auto sm:w-[50%] rounded-md">
+          <div className=" bg-[#5CDb95] px-10 pt-8 mx-auto sm:w-[50%] rounded-md w-screen">
             <div className={'text-2xl text-white font-bold'}>
               {item.title}
             </div>
