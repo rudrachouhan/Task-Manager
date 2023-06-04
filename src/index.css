@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.home{
+    background: url("../public/assets/vector-terazzo-seamless-pattern-abstract-textured-background-done-fom-real-broken-small-tile-chips-modern-stone-color-pastel-marble-wallpaper-for-print-and-web-2C756PJ.jpg");
+    background-size: contain;
+}
