@@ -1,12 +1,23 @@
-import React, { useState } from "react";
-// import {ArrayHolder} from './ArrayHolder'
+import React, { useEffect, useState } from "react";
+
+// to get the data from localstrorage
+
+const getLocalItems = () => {
+  let list = localStorage.getItem('lists');
+  if(list){
+    return JSON.parse(localStorage.getItem('lists'));
+  }
+  else{
+    return [];
+  }
+}
 
 export const Home = () => {
   let nextId = 0;
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [array, setArray] = useState([]);
+  const [array, setArray] = useState(getLocalItems());
 
   const handleArrays = () => {
     setArray([
@@ -34,6 +45,11 @@ export const Home = () => {
     setArray(updatedArray);
   }
 
+  useEffect(() => {
+    localStorage.setItem('lists',JSON.stringify(array));
+  }, [array])
+  
+
 
 
 
@@ -42,10 +58,10 @@ return (
     <div className="flex flex-col gap-20 items-center">
       {/* Header */}
       <div className="flex justify-between items-center mt-5 w-full">
-        <div className="ml-10">
+        <div className="sm:ml-10 ml-4">
           <h1 className="text-4xl text-[#05386b]">TASK MANAGER</h1>
         </div>
-        <div className="mr-10">
+        <div className="sm:mr-10 mr-4">
           <a href="#tasks">
             <button className="px-4 py-2 bg-[#05386b] mr-4 rounded-lg text-white">
               TASKS
@@ -55,7 +71,7 @@ return (
       </div>
 
       {/* Main Section*/}
-      <div className="w-[50%] bg-[#5CDB95] px-10 py-20 rounded-xl">
+      <div className="sm:w-[50%] bg-[#5CDB95] px-10 py-20 rounded-xl">
         <div className="flex flex-col justify-center gap-10">
           <input
             type="text"
@@ -86,7 +102,7 @@ return (
     <div id="tasks" className="flex flex-col mt-20">
       {array.map((item, ind) => {
         return (
-          <div className=" bg-[#5CDb95] px-10 pt-8 mx-auto w-[50%] rounded-md">
+          <div className=" bg-[#5CDb95] px-10 pt-8 mx-auto sm:w-[50%] rounded-md">
             <div className={'text-2xl text-white font-bold'}>
               {item.title}
             </div>
