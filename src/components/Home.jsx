@@ -71,7 +71,7 @@ return (
       </div>
 
       {/* Main Section*/}
-      <div className="sm:w-[50%] bg-[#5CDB95] px-10 py-20 rounded-xl">
+      <div className="sm:w-[50%] bg-[#5CDB95] px-10 py-20 rounded-xl w-[80%] mx-auto">
         <div className="flex flex-col justify-center gap-10">
           <input
             type="text"
@@ -102,7 +102,7 @@ return (
     <div id="tasks" className="flex flex-col mt-20">
       {array.map((item, ind) => {
         return (
-          <div className=" bg-[#5CDb95] px-10 pt-8 mx-auto sm:w-[50%] rounded-md w-screen">
+          <div className="bg-[#5CDb95] px-10 pt-8 mx-auto sm:w-[50%] rounded-md w-screen">
             <div className={'text-2xl text-white font-bold'}>
               {item.title}
             </div>
